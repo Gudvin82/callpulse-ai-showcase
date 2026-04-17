@@ -1,0 +1,51 @@
+# CallPulse AI - Public Showcase
+
+CallPulse AI is an on-prem AI platform for call analysis and sales operations.
+This public repository demonstrates product capabilities and integration approach
+without exposing private production logic or customer data.
+
+## Why this repository is public
+
+This repo is designed for:
+
+- technical review by potential employers and partners,
+- architecture discussion,
+- safe local demo in mock mode.
+
+This repo does not include:
+
+- production keys/secrets,
+- customer recordings and personal data,
+- full commercial backend logic.
+
+## Product modules
+
+- Call Analysis: ingestion, transcript, quality and risk markers.
+- Analytics: manager dashboard and operational summaries.
+- AI Sales Department: incoming AI calls, outbound campaigns, CRM funnel.
+- Integrations: telephony, messengers, storage, and AI providers.
+- Billing and Ops: usage visibility and environment checks.
+
+## Quick demo
+
+Run safe mock API:
+
+```bash
+cd mock-api
+npm install
+npm run start
+```
+
+Mock API starts at `http://localhost:8090`.
+
+## Repository structure
+
+- `docs/` - architecture and API notes.
+- `mock-api/` - lightweight sandbox API for demos.
+- `examples/` - integration snippets and payload examples.
+
+## Security statement
+
+- This repository is sanitized for public sharing.
+- All sensitive configuration values are placeholders only.
+- Runtime/customer data is intentionally excluded.
