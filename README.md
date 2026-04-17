@@ -26,6 +26,20 @@ This repo does not include:
 - Integrations: telephony, messengers, storage, and AI providers.
 - Billing and Ops: usage visibility and environment checks.
 
+## What is included in this public repository
+
+- Product-level documentation (`docs/`) for architecture, PRD, AI design and security approach.
+- Safe `mock-api` for local demo and API interaction examples.
+- Example payloads for integration walkthroughs.
+- Public-safe legal and usage files (`LICENSE`, `NOTICE`).
+
+## What is intentionally excluded
+
+- Any production secret or environment values.
+- Customer recordings, transcripts and personal data.
+- Private on-prem operational datasets and backups.
+- Internal commercial implementation details not intended for public disclosure.
+
 ## Quick demo
 
 Run safe mock API:
@@ -49,3 +63,7 @@ Mock API starts at `http://localhost:8090`.
 - This repository is sanitized for public sharing.
 - All sensitive configuration values are placeholders only.
 - Runtime/customer data is intentionally excluded.
+
+## Contact
+
+For partnership or technical collaboration, contact repository owner via GitHub profile.
