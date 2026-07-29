@@ -29,6 +29,7 @@ This repo does not include:
 ## What is included in this public repository
 
 - Product-level documentation (`docs/`) for architecture, PRD, AI design and security approach.
+- [Russian architecture reference](docs/ARCHITECTURE_REFERENCE_RU.md) describing the target industrial architecture of the platform.
 - Safe `mock-api` for local demo and API interaction examples.
 - Example payloads for integration walkthroughs.
 - Public-safe legal and usage files (`LICENSE`, `NOTICE`).
