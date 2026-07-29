@@ -1,31 +1,22 @@
 # Security and Data Handling
 
-## What is collected in production (not in this public repo)
+## Public repository boundary
 
-- Call metadata (time, duration, source, status).
-- Transcript and analysis results.
-- CRM lead state and follow-up actions.
+This repository contains only synthetic examples and public-safe documentation. It must not contain production environment files, credentials, SIP configuration, customer recordings, transcripts, personal data, database dumps, or backup archives.
 
-## What is not stored in this public repository
+## Target production controls
 
-- Production `.env` files.
-- Access keys, private keys, signing secrets.
-- Customer recordings and personal datasets.
-- Runtime DB dumps and backup archives.
+- Server-side tenant isolation and role-based access control; callers never choose a tenant identifier as a trusted input.
+- MFA/SSO, audit trails, approval workflows, and least-privilege service identities where required.
+- Managed secret storage, encryption in transit and at rest, key rotation, and access auditing.
+- Media access through short-lived signed URLs; masked personal data in standard UI and logs.
+- Retention policies, legal hold, deletion workflows, and verified backup/restore procedures.
+- SIP and webhook authentication, replay protection, rate limits, WAF controls, and payload validation.
 
-## Secret management principles
+## AI and knowledge safety
 
-- Environment-only secrets.
-- Rotated credentials after any accidental exposure.
-- No secret values in commit history.
+RAG access respects tenant, role, audience, and policy constraints. Semantic caching uses strict versioned keys and must be invalidated when knowledge, permissions, or policy versions change. Cached answers are revalidated before use.
 
-## Logging principles
+## Publication checks
 
-- Log operational errors and system status.
-- Do not log raw secrets or full sensitive payloads.
-
-## Publication checklist
-
-- Run secret scan before each push.
-- Verify no `uploads/`, `data/`, `backups/`, `.env*` (except `.env.example`).
-- Publish from a clean repository history.
+Run `scripts/scan_public_repo.sh` before publishing. Review the complete Git diff and history for secrets or personal data; a pattern scan is a guardrail, not a replacement for human review.

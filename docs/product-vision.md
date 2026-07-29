@@ -2,25 +2,27 @@
 
 ## One-line vision
 
-CallPulse AI helps sales teams turn calls into controlled revenue by combining call intelligence, AI assistance, and CRM execution in one on-prem platform.
+CallPulse AI turns voice interactions into controlled business outcomes by combining call intelligence, Voice AI, CRM execution, approved knowledge, and cost visibility in one platform.
 
-## Target audience
+## Target users
 
-- Heads of sales and revenue operations.
-- Contact center supervisors.
-- Businesses that require on-prem data control.
+- Sales and revenue operations leaders.
+- Contact-centre supervisors and quality teams.
+- Service organisations that need controlled AI dialogue and human escalation.
+- Businesses requiring self-hosted, private-cloud, or jurisdiction-aware deployment options.
 
 ## Core value
 
-- Faster call review and coaching.
-- Better follow-up discipline in CRM.
-- Lower lead loss due to missed next steps.
-- Transparent AI and speech processing costs.
+- Analyse calls and provide actionable coaching without manual transcript review.
+- Answer and qualify inbound demand with a policy-controlled Voice AI assistant.
+- Run compliant outbound campaigns with explicit attempt, consent, and outcome control.
+- Move qualified outcomes to CRM without duplicate calls, leads, or webhooks.
+- See AI and telephony cost by call, campaign, quality profile, and business unit.
 
-## Product positioning
+## Product principles
 
-Compared to basic call recording systems, CallPulse AI focuses on:
-
-- call quality analysis with actionable manager insights,
-- live operator assistance and voice-AI roadmap,
-- closed loop from call outcome to CRM stage actions.
+- AI answers are grounded in approved knowledge and server-side business tools.
+- Real-time voice processing is isolated from CRM and administrative control paths.
+- Human handoff is a first-class outcome, not an exception.
+- Every consequential command is traceable, idempotent, and version-aware.
+- Sensitive data and production integrations remain outside the public showcase.

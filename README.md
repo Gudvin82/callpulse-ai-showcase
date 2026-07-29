@@ -1,49 +1,39 @@
-# CallPulse AI - Public Showcase
+# CallPulse AI - Public Product Showcase / Публичная витрина продукта
 
-CallPulse AI is an on-prem AI platform for call analysis and sales operations.
-This public repository demonstrates product capabilities and integration approach
-without exposing private production logic or customer data.
+[Русская версия](#русский) | [English version](#english)
 
-## Why this repository is public
+---
 
-This repo is designed for:
+## Русский
 
-- technical review by potential employers and partners,
-- architecture discussion,
-- safe local demo in mock mode.
+CallPulse AI - единая платформа голосовой автоматизации для продаж, контакт-центров и сервисных подразделений. Она объединяет анализ звонков, голосового AI-оператора для входящих обращений, AI-автообзвон, CRM, базу знаний (RAG) и контроль затрат в одном технологическом контуре.
 
-This repo does not include:
+### Что демонстрирует репозиторий
 
-- production keys/secrets,
-- customer recordings and personal data,
-- full commercial backend logic.
+- Архитектуру трёх взаимосвязанных продуктов: анализ звонков, входящий Voice AI и исходящие кампании.
+- Разделение Control Plane (настройки, кампании, CRM-команды) и Voice Runtime (контур обработки звонка в реальном времени).
+- Публичный mock API с безопасными синтетическими данными для звонков, лидов, кампаний, базы знаний, согласий и затрат.
+- Контракты интеграции и подход к безопасности, надёжности, RAG и эксплуатации.
 
-## Product modules
+### Что намеренно не публикуется
 
-- Call Analysis: ingestion, transcript, quality and risk markers.
-- Analytics: manager dashboard and operational summaries.
-- AI Sales Department: incoming AI calls, outbound campaigns, CRM funnel.
-- Integrations: telephony, messengers, storage, and AI providers.
-- Billing and Ops: usage visibility and environment checks.
+- Закрытый production-код, инфраструктурные конфигурации и коммерческие реализации.
+- Ключи, токены, SIP-реквизиты, записи разговоров, персональные и клиентские данные.
+- Дампы баз данных, резервные копии и операционные наборы данных.
 
-## What is included in this public repository
+### Важное уточнение
 
-- Product-level documentation (`docs/`) for architecture, PRD, AI design and security approach.
-- [Russian architecture reference](docs/ARCHITECTURE_REFERENCE_RU.md) describing the target industrial architecture of the platform.
-- Safe `mock-api` for local demo and API interaction examples.
-- Example payloads for integration walkthroughs.
-- Public-safe legal and usage files (`LICENSE`, `NOTICE`).
+Это публичная продуктовая витрина и архитектурная документация. Mock API иллюстрирует интерфейсы и сценарии; он не является телефонией, не совершает звонки и не заменяет защищённый production-контур. Архитектурные характеристики и показатели производительности должны подтверждаться в конкретном контуре нагрузочными и эксплуатационными тестами.
 
-## What is intentionally excluded
+### Модули платформы
 
-- Any production secret or environment values.
-- Customer recordings, transcripts and personal data.
-- Private on-prem operational datasets and backups.
-- Internal commercial implementation details not intended for public disclosure.
+- **Call Intelligence**: загрузка и приём записей, транскрибация, контроль качества, риски, рекомендации и аналитика.
+- **Inbound Voice AI**: приём входящего звонка, диалог с RAG, сбор данных, перевод на сотрудника и сохранение результата.
+- **Outbound AI Campaigns**: кампании обзвона, сценарии, статусы попыток, согласия/DNC и передача результата в CRM.
+- **CRM и Control API**: лиды, воронки, следующие действия, идемпотентные команды и аудит изменений.
+- **Knowledge, Billing и Operations**: версионируемая база знаний, учёт STT/LLM/TTS, контроль бюджета, мониторинг и диагностика.
 
-## Quick demo
-
-Run safe mock API:
+### Быстрый запуск mock API
 
 ```bash
 cd mock-api
@@ -51,20 +41,57 @@ npm install
 npm run start
 ```
 
-Mock API starts at `http://localhost:8090`.
+Mock API будет доступен по адресу `http://localhost:8090`. Его эндпоинты и ограничения описаны в [документации](docs/README.md).
 
-## Repository structure
+### Документация
 
-- `docs/` - architecture and API notes; begin with [the documentation index](docs/README.md).
-- `mock-api/` - lightweight sandbox API for demos.
-- `examples/` - integration snippets and payload examples.
+- [Архитектурная справка на русском](docs/ARCHITECTURE_REFERENCE_RU.md) - полный целевой промышленный контур.
+- [Краткий обзор архитектуры на английском](docs/ARCHITECTURE_OVERVIEW_EN.md).
+- [Индекс документации / Documentation index](docs/README.md).
 
-## Security statement
+---
 
-- This repository is sanitized for public sharing.
-- All sensitive configuration values are placeholders only.
-- Runtime/customer data is intentionally excluded.
+## English
 
-## Contact
+CallPulse AI is a unified voice-automation platform for sales, contact centres, and service operations. It brings call intelligence, inbound Voice AI, outbound AI campaigns, CRM, knowledge retrieval (RAG), and cost control into one technology stack.
 
-For partnership or technical collaboration, contact repository owner via GitHub profile.
+### What this repository demonstrates
+
+- The architecture of three connected products: call analysis, inbound Voice AI, and outbound campaigns.
+- Separation between the Control Plane (configuration, campaigns, CRM commands) and the real-time Voice Runtime.
+- A public mock API with safe synthetic data for calls, leads, campaigns, knowledge bases, consent, and usage.
+- Integration contracts and the approach to security, reliability, RAG, and operations.
+
+### What is intentionally excluded
+
+- Private production source code, infrastructure configuration, and commercial implementations.
+- Keys, tokens, SIP credentials, call recordings, customer data, and personal data.
+- Database dumps, backups, and operational datasets.
+
+### Important scope note
+
+This is a public product showcase and architecture reference. The mock API demonstrates contracts and scenarios; it is not a telephony system, does not place calls, and does not replace a protected production runtime. Architecture characteristics and performance figures must be validated with load and operational testing in the applicable deployment environment.
+
+### Platform modules
+
+- **Call Intelligence**: recording ingestion, transcription, quality control, risk detection, recommendations, and analytics.
+- **Inbound Voice AI**: inbound call handling, RAG-backed dialogue, data collection, human handoff, and conversation outcome capture.
+- **Outbound AI Campaigns**: calling campaigns, scenarios, attempt states, consent/DNC checks, and CRM result delivery.
+- **CRM and Control API**: leads, pipelines, next actions, idempotent commands, and change auditing.
+- **Knowledge, Billing, and Operations**: versioned knowledge, STT/LLM/TTS usage accounting, budget controls, monitoring, and diagnostics.
+
+### Quick start: mock API
+
+```bash
+cd mock-api
+npm install
+npm run start
+```
+
+The mock API is available at `http://localhost:8090`. See the [documentation index](docs/README.md) for endpoints and constraints.
+
+### Documentation
+
+- [Full Russian architecture reference](docs/ARCHITECTURE_REFERENCE_RU.md).
+- [English architecture overview](docs/ARCHITECTURE_OVERVIEW_EN.md).
+- [Documentation index](docs/README.md).
