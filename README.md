@@ -55,7 +55,7 @@ Mock API starts at `http://localhost:8090`.
 
 ## Repository structure
 
-- `docs/` - architecture and API notes.
+- `docs/` - architecture and API notes; begin with [the documentation index](docs/README.md).
 - `mock-api/` - lightweight sandbox API for demos.
 - `examples/` - integration snippets and payload examples.
 
